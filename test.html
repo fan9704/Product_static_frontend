@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <form action="" class="form" id="form">
+
+        <div class="container-fluid form_container register-form" v-show="show">
+            <h2>Register Now</h2>
+            <div class="mb-3 row">
+                <label for="username" class="col-sm-2 col-form-label ">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" v-model="username">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="first_name" class="col-sm-2 col-form-label ">email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="first_name" v-model="email">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="password" class="col-sm-2 col-form-label ">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" v-model="password">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="last_name" class="col-sm-2 col-form-label badge-dark badge  text-wrap ">check <br>
+                    password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="last_name" v-model="check_password">
+                </div>
+            </div>
+            <!-- register -->
+            <hr>
+            <div class="mb-3 row">
+                <div class="col-sm-6 "><input type="reset" value="reset" class="form-control" id="reset"></div>
+                <div class="col-sm-6 "><input type="submit" value="register" class="form-control" id="submit"></div>
+            </div>
+            <p class="message">Have Account? <a href="#" v-on:click="button">Login now</a></p>
+        </div>
+
+        <div class="container-fluid form_container login-form" v-show="show2">
+            <h2>Login Now</h2>
+            <div class="mb-3 row">
+                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="login_username" v-model="login_username" value="">
+
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="login_password" v-model="login_password">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-6 "><input type="reset" value="reset" class="form-control" id="login_reset"></div>
+                <div class="col-sm-6 "><input type="submit" value="login" class="form-control" id="login_submit"></div>
+            </div>
+            <p class="message">Not registered? <a href="#" v-on:click="button">Create an account</a></p>
+        </div>
+        <p style="color: red;">show:{{show}}show2: {{show2}}</p>
+        <button v-on:click="button">button</button>
+    </form>
+
+    <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <!-- <script src="Jquery.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="login.js"></script> -->
+    <script>
+        const login_app = {
+            data() {
+                return {
+                    username: "",
+                    password: "",
+                    first_name: "",
+                    last_name: "",
+                    login_username: "",
+                    login_password: "",
+                    email: "",
+                    check_password: "",
+                    show: true,
+                    show2: false
+                }
+            },
+            methods: {
+                button() {
+                    let button = document.querySelector(".message a");
+                    let container = document.querySelector(".form_container");
+                    let temp = null;
+                    button.addEventListener("click", () => {
+                        temp = this.show;
+                        this.show = this.show2;
+                        this.show2 = temp;
+                        console.log(this.show);
+                        console.log(this.show2);
+                    });
+                }
+            },
+            mounted() {
+
+            },
+
+        }
+        Vue.createApp(login_app).mount('#form');
+    </script>
+</body>
+
+</html>

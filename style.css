@@ -1,0 +1,59 @@
+div.li {
+    border-radius: 5px;
+    border: black 5px solid;
+    background-color: rgb(223, 223, 54);
+    color: black;
+    margin: 20px;
+    padding: 10px;
+    width: 20%;
+    float: left;
+    font-weight: bolder;
+}
+
+.product_title {
+    border-radius: 5px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px;
+    border: black 5px solid;
+    border-style: inset;
+    background-color: #000;
+    color: yellow;
+}
+
+.clickme {
+    border-radius: 5px;
+    border: black 5px solid;
+    border-style: inset;
+    background-color: #000;
+    color: yellow;
+    padding: 0;
+    text-align: center;
+}
+
+.detail {
+    display: none;
+    border-radius: 5px;
+    border: black 5px solid;
+    border-style: inset;
+    background-color: #000;
+    color: yellow;
+    padding: 10px;
+}
+
+#list-rendering h2 {
+    text-align: center;
+    padding: 10px;
+    border: black solid 3px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+#list-rendering {
+    background-color: #aaa;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: black solid 3px;
+    border-radius: 5px;
+}
